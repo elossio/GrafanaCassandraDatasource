@@ -11,13 +11,13 @@ services:
       - /var/lib/grafana
       - ./dist:/var/lib/grafana/plugins/cassandra
   cassandra:
-    image: cassandra:4
+    image: cassandra:latest
     ports:
       - "9042:9042"
     volumes:
       - /var/lib/cassandra
   sample-data:
-    image: cassandra:4
+    image: cassandra:latest
     depends_on:
       - cassandra
     restart: "no"
